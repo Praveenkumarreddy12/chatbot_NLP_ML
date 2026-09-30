@@ -3,6 +3,10 @@ import re
 
 from sklearn.model_selection import train_test_split
 from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.linear_model import LogisticRegression
+from sklearn.metrics import classification_report
+
+
 
 def clean_text(text):
     text = text.lower()
@@ -44,3 +48,16 @@ vectorizer = TfidfVectorizer(
 x_train_tfidf = vectorizer.fit_transform(x_train)
 x_test_tfidf = vectorizer.transform(x_test)
 
+
+# Model Selection
+
+model = LogisticRegression(max_iter= 1000)
+
+model.fit(x_train_tfidf,y_train)
+
+
+pred = model.predict(x_test_tfidf)
+x_pred = model.predict(x_train_tfidf)
+
+print(classification_report(y_test, pred))
+print(classification_report(y_train, x_pred))
