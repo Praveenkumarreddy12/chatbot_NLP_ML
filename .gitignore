@@ -1,0 +1,9 @@
+# Virtual environment
+chat/
+venv/
+.venv/
+env/
+
+# Python cache
+__pycache__/
+*.py[cod]
