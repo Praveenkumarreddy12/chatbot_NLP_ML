@@ -1,51 +1,51 @@
 text,intent
-i am unable to sign in,account
-can i get my money back for this order,refund
-i want to return my product,refund
-i want to end my subscription,cancellation
-i forgot my login details,account
-i dont want to continue my subscription,cancellation
-i have not received my delivery,delivery
-my package is delayed,delivery
-i want my money back,refund
-my account is locked,account
-i cannot login to my account,account
-why did my payment not go through,payment
-how long does a refund take,refund
-payment is showing as failed,payment
-money was deducted from my account,payment
-i cannot make a payment,payment
-please cancel my subscription,cancellation
-please stop charging me every month,cancellation
-can i cancel my plan,cancellation
-i cannot access my account,account
-i was charged twice for the same order,payment
-my login is not working,account
-when will my order arrive,delivery
-i received a damaged product and want a refund,refund
-how can i get a refund,refund
-my payment failed,payment
-stop my monthly subscription,cancellation
-what is the status of my shipment,delivery
-can i return this item,refund
-the transaction failed,payment
-please give me my tracking information,delivery
-i forgot my password,account
-please refund my order,refund
-my card payment was declined,payment
-where is my package,delivery
-i was charged but my payment failed,payment
-i no longer want the subscription,cancellation
-i am not happy with my purchase and want a refund,refund
-can you track my order,delivery
-i want to cancel my subscription,cancellation
-my password is not working,account
 my order has not arrived,delivery
-i need help accessing my account,account
-cancel my current plan,cancellation
+can i return this item,refund
+i am not happy with my purchase and want a refund,refund
+i received a damaged product and want a refund,refund
+payment is showing as failed,payment
+please give me my tracking information,delivery
+i cannot access my account,account
+my login is not working,account
+how can i get a refund,refund
 where is my order,delivery
-my card was declined during checkout,payment
-how do i cancel my account subscription,cancellation
+i want to cancel my subscription,cancellation
+i am unable to sign in,account
+my password is not working,account
+when will my order arrive,delivery
+can you track my order,delivery
+my account is locked,account
+money was deducted from my account,payment
+i want my money back,refund
+cancel my current plan,cancellation
+i was charged twice for the same order,payment
+stop my monthly subscription,cancellation
 how can i reset my password,account
+my card was declined during checkout,payment
+i need help accessing my account,account
+my package is delayed,delivery
+please cancel my subscription,cancellation
+i cannot make a payment,payment
+what is the status of my shipment,delivery
+i dont want to continue my subscription,cancellation
+i want to return my product,refund
+i was charged but my payment failed,payment
+my payment failed,payment
+i forgot my password,account
 my order is still in transit,delivery
+can i cancel my plan,cancellation
+how long does a refund take,refund
+why did my payment not go through,payment
+i cannot login to my account,account
+how do i cancel my account subscription,cancellation
+my card payment was declined,payment
+can i get my money back for this order,refund
+i want to end my subscription,cancellation
+i no longer want the subscription,cancellation
+i forgot my login details,account
+i have not received my delivery,delivery
+where is my package,delivery
+please refund my order,refund
 i need to return something i bought,refund
+the transaction failed,payment
+please stop charging me every month,cancellation
