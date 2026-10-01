@@ -121,7 +121,7 @@ def get_order_details(request):
     if order_id is None:
         return {
             "Success" : False,
-            "error" : "Please provide order id with out this i can't proced further steps."
+            "error" : "Please provide order id with out this i can't proced further steps1."
         }
     if user_id is None:
             return {
@@ -170,7 +170,7 @@ def cancel_order(request):
     if order_id is None:
         return {
             "Success" : False,
-            "error" : "Please provide order id with out this i can't proced further steps."
+            "error" : "Please provide order id with out this i can't proced further steps2."
         }
     if user_id is None:
             return {
@@ -234,7 +234,7 @@ def get_refund_status(request):
     if order_id is None:
         return {
             "Success" : False,
-            "error" : "Please provide order id without this i can't proced further steps."
+            "error" : "Please provide order id without this i can't proced further steps3."
         }
     if user_id is None:
             return {

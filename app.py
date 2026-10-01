@@ -1,13 +1,16 @@
 import joblib
 import re
 from fastapi import FastAPI
+from fastapi.responses import FileResponse
+
 from src.db_connector import (
     get_user_details,
     get_order_details,
     get_order_status,
     get_refund_status,
     update_user_phone,
-    cancel_order
+    cancel_order,
+    get_connection
 )
 
 model = joblib.load("src/model.pkl")
@@ -19,13 +22,39 @@ app =FastAPI()
 
 @app.get("/")
 def home():
-    return {"message": "E-commerce chatbot API is running"}
+    connection = get_connection()
+    cursor = connection.cursor(dictionary=True)
+
+    try:
+        cursor.execute("""
+            SELECT
+                product_id,
+                product_name,
+                category,
+                price,
+                stock_quantity,
+                description,
+                brand,
+                image_url
+            FROM products
+        """)
+
+        products = cursor.fetchall()
+
+        return {
+            "message": "E-commerce chatbot API is running",
+            "products": products
+        }
+
+    finally:
+        cursor.close()
+        # connection.close()
 
 @app.get("/chatbot")
-def chatbot(): #user_id: int, message: str
+def chatbot(text : str): #user_id: int, message: str
 
     message = "i received a damaged product and want a refund my order id 1 and user id 1"
-    request = predict_intent(message)
+    request = predict_intent(text)
 
     intent_handler = {
     "account" : get_user_details,
@@ -44,7 +73,9 @@ def chatbot(): #user_id: int, message: str
     return intent_handler[intent](parameters)  
 
 
-
+@app.get("/frontend")
+def frontend():
+    return FileResponse("templates/home.html")
 
 def predict_intent(text) :
 
