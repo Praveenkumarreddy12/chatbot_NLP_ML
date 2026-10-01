@@ -24,7 +24,7 @@ def home():
 @app.get("/chatbot")
 def chatbot(): #user_id: int, message: str
 
-    message = "i want to cancel my subscription order 3 and MY  id 3 "
+    message = "i received a damaged product and want a refund my order id 1 and user id 1"
     request = predict_intent(message)
 
     intent_handler = {
@@ -88,6 +88,15 @@ def predict_intent(text) :
 
     if user_match:
         parameters["user_id"] = int(user_match.group(1))
+
+    # Extract Phone number
+    phone_match = re.search(
+        r"\b(?:phone|phone\s*number|mobile|mobile\s*number|contact|contact\s*number)\s*#?\s*(\d{10})\b",
+        text.lower()
+    )
+
+    if phone_match :
+        parameters["phone_number"] = str(phone_match.group(1))
 
 
     print("Parameters : ",parameters)

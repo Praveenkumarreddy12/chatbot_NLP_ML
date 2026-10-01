@@ -1,11 +1,11 @@
 import mysql.connector
-
-db = mysql.connector.connect(
-    host="localhost",
-    user="root",
-    password="root",
-    database="chatbot_nlp"
-)
+def get_connection():
+    return mysql.connector.connect(
+        host="localhost",
+        user="root",
+        password="root",
+        database="chatbot_nlp"
+    )
 
 # print("MySQL connected successfully!")
 
@@ -13,9 +13,19 @@ db = mysql.connector.connect(
 # ACCOUNT INTENTS
 # -------------------------
 
-def get_user_details(user_id):
+def get_user_details(request):
 
-    cursor = db.cursor(dictionary=True)
+    connection = get_connection()
+
+    user_id = request.get('user_id')
+
+    if user_id is None:
+        return {
+            "Success" : False,
+            "error" : "Please provide user id with out this i can't proced further steps."
+        }
+
+    cursor =connection.cursor(dictionary=True)
 
     query = """
         SELECT user_id, name, email, phone, created_at
@@ -27,14 +37,31 @@ def get_user_details(user_id):
     result = cursor.fetchone()
 
     cursor.close()
-    db.close()
+    connection.close()
 
     return result
 
 
-def update_user_phone(user_id, phone):
+def update_user_phone(request):
 
-    cursor = db.cursor()
+    connection = get_connection()
+
+    user_id = request.get('user_id')
+    phone = request.get('phone_number')
+    
+    if user_id is None:
+        return {
+            "Success" : False,
+            "error" : "Please provide user id with out this i can't proced further steps."
+        }
+
+    if user_id is None:
+        return {
+            "Success" : False,
+            "error" : "Please provide phone number ex: my number 990XXXXX or phone number : 8843XXX with 10 digit correct number with out this i can't proced further steps."
+        }
+
+    cursor = connection.cursor()
 
     query = """
         UPDATE users
@@ -43,17 +70,27 @@ def update_user_phone(user_id, phone):
     """
 
     cursor.execute(query, (phone, user_id))
-    db.commit()
+    connection.commit()
 
     cursor.close()
-    db.close()
+    connection.close()
 
     return "Phone number updated successfully."
 
 
-def get_order_status(user_id):
+def get_order_status(request):
 
-    cursor = db.cursor()
+    connection = get_connection()
+
+    user_id = request.get('user_id')
+
+    if user_id is None:
+        return {
+            "Success" : False,
+            "error" : "Please provide user id with out this i can't proced further steps."
+        }
+    
+    cursor = connection.cursor()
 
     query = """
         SELECT order_id, order_status, total_amount
@@ -74,9 +111,25 @@ def get_order_status(user_id):
 # ORDER DETAILS
 # -------------------------
 
-def get_order_details(order_id, user_id):
+def get_order_details(request):
 
-    cursor = db.cursor(dictionary=True)
+    connection = get_connection()
+
+    order_id = request.get('order_id')
+    user_id = request.get('user_id')
+    
+    if order_id is None:
+        return {
+            "Success" : False,
+            "error" : "Please provide order id with out this i can't proced further steps."
+        }
+    if user_id is None:
+            return {
+                "Success" : False,
+                "error" : "Please provide user id with out this i can't proced further steps."
+            }
+
+    cursor = connection.cursor(dictionary=True)
 
     query = """
         SELECT
@@ -97,7 +150,7 @@ def get_order_details(order_id, user_id):
     results = cursor.fetchall()
 
     cursor.close()
-    db.close()
+    connection.close()
 
     return results
 
@@ -108,6 +161,8 @@ def get_order_details(order_id, user_id):
 # -------------------------
 
 def cancel_order(request):
+
+    connection = get_connection()
 
     order_id = request.get('order_id')
     user_id = request.get('user_id')
@@ -123,7 +178,7 @@ def cancel_order(request):
                 "error" : "Please provide user id with out this i can't proced further steps."
             }
 
-    cursor = db.cursor()
+    cursor = connection.cursor()
 
     # First check current status
     query = """
@@ -138,14 +193,14 @@ def cancel_order(request):
 
     if result is None:
         cursor.close()
-        db.close()
+        connection.close()
         return "Order not found."
 
     current_status = result[0]
 
     if current_status in ("Delivered", "Cancelled"):
         cursor.close()
-        db.close()
+        connection.close()
         return f"Order cannot be cancelled because it is already {current_status}."
 
     # Cancel order
@@ -157,10 +212,10 @@ def cancel_order(request):
     """
 
     cursor.execute(update_query, (order_id, user_id))
-    db.commit()
+    connection.commit()
 
     cursor.close()
-    db.close()
+    connection.close()
 
     return f"Order #{order_id} has been cancelled successfully."
 
@@ -169,9 +224,25 @@ def cancel_order(request):
 # REFUND STATUS
 # -------------------------
 
-def get_refund_status(order_id, user_id):
+def get_refund_status(request):
 
-    cursor = db.cursor(dictionary=True)
+    connection = get_connection()
+
+    order_id = request.get('order_id')
+    user_id = request.get('user_id')
+
+    if order_id is None:
+        return {
+            "Success" : False,
+            "error" : "Please provide order id without this i can't proced further steps."
+        }
+    if user_id is None:
+            return {
+                "Success" : False,
+                "error" : "Please provide user id with out this i can't proced further steps."
+            }
+
+    cursor = connection.cursor(dictionary=True)
 
     query = """
         SELECT order_id, order_status, total_amount
@@ -184,7 +255,7 @@ def get_refund_status(order_id, user_id):
     result = cursor.fetchone()
 
     cursor.close()
-    db.close()
+    connection.close()
 
     if result is None:
         return None
