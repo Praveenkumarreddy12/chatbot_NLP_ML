@@ -1,5 +1,6 @@
 import joblib
 import re
+import random
 from fastapi import FastAPI
 from fastapi.responses import FileResponse
 
@@ -17,8 +18,39 @@ model = joblib.load("src/model.pkl")
 vectorizer = joblib.load("src/vectorizer.pkl")
 app =FastAPI()
 
+conversation = {
+    "intent" : None,
+    "parameters" : {}
+}
 
+def reset_conversaton():
 
+    global conversation
+
+    conversation = {
+        "intent" : None,
+        "parameters" : {}
+    }
+    
+def get_greating_welcome(text : str):
+    lst = [
+        "Hello! 👋 How can I help you today?",
+        "Hi there! 😊 What can I do for you?",
+        "Hey! 👋 How may I assist you?",
+        "Hello! Nice to hear from you. How can I help?",
+        "Hi! 😊 What would you like help with?",
+        "Hey there! How can I assist you today?",
+        "Good morning! ☀️ How can I help you?",
+        "Good afternoon! 😊 What can I do for you?",
+        "Good evening! 🌆 How may I assist you?",
+        "Welcome! 👋 How can I help you today?",
+        "Hi! I'm here to help. What do you need?",
+        "Hello! 😊 Feel free to ask me anything.",
+    ]
+
+    return {
+        "error" : str(random.choice(lst))
+    }
 
 @app.get("/")
 def home():
@@ -53,24 +85,54 @@ def home():
 @app.get("/chatbot")
 def chatbot(text : str): #user_id: int, message: str
 
-    message = "i received a damaged product and want a refund my order id 1 and user id 1"
+    # message = "i received a damaged product and want a refund my order id 1 and user id 1"
+    
+    global conversation
+
     request = predict_intent(text)
 
     intent_handler = {
     "account" : get_user_details,
-    "order_status" : get_order_status,
+    "delivery" : get_order_status,
     "cancellation" : cancel_order,
     "refund" : get_refund_status,
     "order_details" : get_order_details,
-    "update" : update_user_phone
+    "update" : update_user_phone,
+    "greatings" : get_greating_welcome
 
     }
 
-    intent = request["intent"] #need to upgrade like dist
+    intent = request["intent"] 
     parameters = request['parameters']
 
 
-    return intent_handler[intent](parameters)  
+
+    if intent != conversation["intent"]:
+        reset_conversaton()
+        print("Reset Done.")
+    # check previous intent
+    if conversation["intent"] is not None :
+        # If current message contains useful parameters
+        # but does not contain a meaningful new intent,
+        # continue with previous intent.
+
+        if intent not in intent_handler :
+            intent = conversation["intent"]
+
+    conversation["intent"] = intent
+
+    # merge parametrs
+    conversation["parameters"].update(parameters)
+    parameters = conversation["parameters"]
+
+
+    result =intent_handler[intent](parameters)  
+
+    # if result.get("Success") != False:
+    #     reset_conversaton()
+    #     print("-"*20)
+
+    return result
 
 
 @app.get("/frontend")
@@ -78,6 +140,30 @@ def frontend():
     return FileResponse("templates/home.html")
 
 def predict_intent(text) :
+
+
+    text_lower = text.lower()
+
+    # Check whether message contains user/order ID
+    id_pattern = r"\b(?:user(?:\s*id)?|my(?:\s*user)?(?:\s*id)?)\s*#?\s*(\d+)\b"
+
+    ptr = re.search(id_pattern, text_lower)
+
+    if ptr and "order" not in text_lower:
+        
+        conversation["parameters"] = {
+            "user_id" : ptr.group(1)
+        }
+
+        # Don't run ML model
+        if conversation["intent"]:
+            return {
+                "intent" : conversation["intent"],
+                "parameters" : conversation["parameters"]
+            }
+
+        # If there is no previous intent
+        return None
 
     text_vectorizer = vectorizer.transform([text])
     predictions = model.predict(text_vectorizer)
@@ -130,7 +216,6 @@ def predict_intent(text) :
         parameters["phone_number"] = str(phone_match.group(1))
 
 
-    print("Parameters : ",parameters)
     return {
         "intent" : intent,
         "parameters" : parameters

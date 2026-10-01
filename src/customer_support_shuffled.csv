@@ -1,51 +1,63 @@
 text,intent
-my order has not arrived,delivery
-can i return this item,refund
-i am not happy with my purchase and want a refund,refund
-i received a damaged product and want a refund,refund
-payment is showing as failed,payment
-please give me my tracking information,delivery
-i cannot access my account,account
-my login is not working,account
-how can i get a refund,refund
-where is my order,delivery
-i want to cancel my subscription,cancellation
-i am unable to sign in,account
-my password is not working,account
-when will my order arrive,delivery
-can you track my order,delivery
-my account is locked,account
-money was deducted from my account,payment
-i want my money back,refund
-cancel my current plan,cancellation
-i was charged twice for the same order,payment
-stop my monthly subscription,cancellation
-how can i reset my password,account
-my card was declined during checkout,payment
-i need help accessing my account,account
-my package is delayed,delivery
-please cancel my subscription,cancellation
-i cannot make a payment,payment
-what is the status of my shipment,delivery
-i dont want to continue my subscription,cancellation
-i want to return my product,refund
-i was charged but my payment failed,payment
+hello,greatings
+hello there,greatings
 my payment failed,payment
-i forgot my password,account
-my order is still in transit,delivery
-can i cancel my plan,cancellation
-how long does a refund take,refund
-why did my payment not go through,payment
-i cannot login to my account,account
-how do i cancel my account subscription,cancellation
-my card payment was declined,payment
-can i get my money back for this order,refund
-i want to end my subscription,cancellation
-i no longer want the subscription,cancellation
-i forgot my login details,account
-i have not received my delivery,delivery
-where is my package,delivery
-please refund my order,refund
-i need to return something i bought,refund
+hi there,greatings
 the transaction failed,payment
+i dont want to continue my subscription,cancellation
+my login is not working,account
+i cannot login to my account,account
+my package is delayed,delivery
+how are you,greatings
+i want to return my product,refund
+i was charged twice for the same order,payment
+can i cancel my plan,cancellation
+i am unable to sign in,account
+can i return this item,refund
+i received a damaged product and want a refund,refund
+money was deducted from my account,payment
+i forgot my login details,account
+good afternoon,greatings
+payment is showing as failed,payment
+i cannot make a payment,payment
+how can i get a refund,refund
+why did my payment not go through,payment
+i want to end my subscription,cancellation
+my account is locked,account
+hey,greatings
+please refund my order,refund
+good morning,greatings
+please cancel my subscription,cancellation
+hey there,greatings
+i cannot access my account,account
+i want to cancel my subscription,cancellation
+what is the status of my shipment,delivery
+i have not received my delivery,delivery
+when will my order arrive,delivery
+stop my monthly subscription,cancellation
+i forgot my password,account
+i want my money back,refund
+good evening,greatings
+i no longer want the subscription,cancellation
+how long does a refund take,refund
+please give me my tracking information,delivery
 please stop charging me every month,cancellation
+my card payment was declined,payment
+where is my package,delivery
+i was charged but my payment failed,payment
+cancel my current plan,cancellation
+can i get my money back for this order,refund
+i am not happy with my purchase and want a refund,refund
+can you track my order,delivery
+howdy,greatings
+my password is not working,account
+my order has not arrived,delivery
+i need help accessing my account,account
+greetings,greatings
+where is my order,delivery
+my card was declined during checkout,payment
+how do i cancel my account subscription,cancellation
+how can i reset my password,account
+my order is still in transit,delivery
+hi,greatings
+i need to return something i bought,refund

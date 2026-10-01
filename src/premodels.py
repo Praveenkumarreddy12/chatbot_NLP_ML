@@ -22,7 +22,7 @@ def clean_text(text):
     return text
 
 
-df = pd.read_csv("customer_support_shuffled.csv")
+df = pd.read_csv("customer_support_nlp_dataset.csv")
 
 
 # print(df.head())
@@ -31,7 +31,7 @@ print(df["intent"].value_counts())
 
 df["text"] = df["text"].apply(clean_text)
 
-# df = df.sample(frac=1, random_state=42).reset_index(drop=True)
+df = df.sample(frac=1, random_state=42).reset_index(drop=True)
 
 
 # Save the shuffled dataset

@@ -55,7 +55,7 @@ def update_user_phone(request):
             "error" : "Please provide user id with out this i can't proced further steps."
         }
 
-    if user_id is None:
+    if phone is None:
         return {
             "Success" : False,
             "error" : "Please provide phone number ex: my number 990XXXXX or phone number : 8843XXX with 10 digit correct number with out this i can't proced further steps."
@@ -104,7 +104,22 @@ def get_order_status(request):
 
     cursor.close()
 
-    return results
+    lst_result = []
+    for order_id, status, amount in results:
+         lst_result.append({
+              "order_id" : order_id,
+              "status" : status,
+              "amount" : amount
+         })
+         
+
+
+    return lst_result
+# {
+#         "order_id": results[0],
+#         "status":results[0],
+#         "amount": results[0]
+#     }
 
 
 # -------------------------
@@ -121,12 +136,12 @@ def get_order_details(request):
     if order_id is None:
         return {
             "Success" : False,
-            "error" : "Please provide order id with out this i can't proced further steps1."
+            "error" : "Please provide order id and user id at Once. with out this i can't proced further steps1."
         }
     if user_id is None:
             return {
                 "Success" : False,
-                "error" : "Please provide user id with out this i can't proced further steps."
+                "error" : "Please provide user id and order id at Once. with out this i can't proced further steps."
             }
 
     cursor = connection.cursor(dictionary=True)
@@ -170,12 +185,12 @@ def cancel_order(request):
     if order_id is None:
         return {
             "Success" : False,
-            "error" : "Please provide order id with out this i can't proced further steps2."
+            "error" : "Please provide order id and user id at once. with out this i can't proced further steps2."
         }
     if user_id is None:
             return {
                 "Success" : False,
-                "error" : "Please provide user id with out this i can't proced further steps."
+                "error" : "Please provide user id and order id at once. with out this i can't proced further steps."
             }
 
     cursor = connection.cursor()
@@ -234,12 +249,12 @@ def get_refund_status(request):
     if order_id is None:
         return {
             "Success" : False,
-            "error" : "Please provide order id without this i can't proced further steps3."
+            "error" : "Please provide order id and user id at once. without this i can't proced further steps."
         }
     if user_id is None:
             return {
                 "Success" : False,
-                "error" : "Please provide user id with out this i can't proced further steps."
+                "error" : "Please provide user id and order id at once. with out this i can't proced further steps."
             }
 
     cursor = connection.cursor(dictionary=True)

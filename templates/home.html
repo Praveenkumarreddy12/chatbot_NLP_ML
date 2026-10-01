@@ -386,7 +386,7 @@
             div.className =
                 "message " + type;
 
-            div.textContent = message;
+            div.innerHTML  = message;
 
             chatMessages.appendChild(div);
 
@@ -454,6 +454,11 @@
 
                 const data =
                     await response.json();
+                
+
+                console.log("DATA:", data);
+                console.log("TYPE:", typeof data);
+                console.log("IS ARRAY:", Array.isArray(data));
 
 
                 /* Remove "Typing..." */
@@ -506,10 +511,35 @@
                 botResponse = data.message;
 
             }
+            else if (data.order_id || data.refund_status || data.amount) {
+
+                botResponse =  [
+                    data.order_id ? `Order ID: ${data.order_id}` : "",
+                    data.refund_status ? `Refund Status: ${data.refund_status}` : "",
+                    data.amount ? `Amount: ${data.amount}` : ""
+                ].filter(Boolean).join("<br>");
+
+
+            }
+            else if (
+                Array.isArray(data) &&
+                data.length > 0 &&
+                data[0].order_id
+                ) {
+                    botResponse = data.map(item => [
+                        item.order_id ? `Order ID: ${item.order_id}` : "",
+                        item.status ? `Status: ${item.status}` : "",
+                        item.amount ? `Amount: ${item.amount}` : ""
+                    ].filter(Boolean).join("<br>")).join("<br><br>");
+            }
+
 
             else {
 
                 botResponse = "Sorry, I couldn't understand that.";
+                console.log(Array.isArray(data));
+                console.log(data.length)
+                console.log(data[0].order_id)
 
             }
 
