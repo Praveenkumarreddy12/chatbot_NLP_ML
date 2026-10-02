@@ -216,7 +216,9 @@ def cancel_order(request):
     if current_status in ("Delivered", "Cancelled"):
         cursor.close()
         connection.close()
-        return f"Order cannot be cancelled because it is already {current_status}."
+        return {
+             "message" : f"Order cannot be cancelled because it is already {current_status}."
+        }
 
     # Cancel order
     update_query = """
@@ -232,7 +234,9 @@ def cancel_order(request):
     cursor.close()
     connection.close()
 
-    return f"Order #{order_id} has been cancelled successfully."
+    return {
+         "message" :f"Order #{order_id} has been cancelled successfully."
+    }
 
 
 # -------------------------

@@ -1,0 +1,63 @@
+text,intent
+My payment failed,payment
+My card payment was declined,payment
+I was charged but my payment failed,payment
+Money was deducted from my account,payment
+Why did my payment not go through,payment
+The transaction failed,payment
+I cannot make a payment,payment
+My card was declined during checkout,payment
+Payment is showing as failed,payment
+I was charged twice for the same order,payment
+My password is not working,account
+I forgot my password,account
+I cannot login to my account,account
+I am unable to sign in,account
+How can I reset my password,account
+I cannot access my account,account
+My login is not working,account
+I forgot my login details,account
+I need help accessing my account,account
+My account is locked,account
+Where is my order,delivery
+Where is my package,delivery
+My order has not arrived,delivery
+Can you track my order,delivery
+When will my order arrive,delivery
+My package is delayed,delivery
+I have not received my delivery,delivery
+What is the status of my shipment,delivery
+My order is still in transit,delivery
+Please give me my tracking information,delivery
+I want to return my product,refund
+How can I get a refund,refund
+I want my money back,refund
+Can I return this item,refund
+I received a damaged product and want a refund,refund
+I am not happy with my purchase and want a refund,refund
+Please refund my order,refund
+How long does a refund take,refund
+I need to return something I bought,refund
+Can I get my money back for this order,refund
+I want to cancel my subscription,cancellation
+Please cancel my subscription,cancellation
+How do I cancel my account subscription,cancellation
+I no longer want the subscription,cancellation
+Stop my monthly subscription,cancellation
+I want to end my subscription,cancellation
+Please stop charging me every month,cancellation
+Can I cancel my plan,cancellation
+I don't want to continue my subscription,cancellation
+Cancel my current plan,cancellation
+hello,greatings
+hi,greatings
+hey,greatings
+good morning,greatings
+good afternoon,greatings
+good evening,greatings
+hello there,greatings
+hi there,greatings
+hey there,greatings
+how are you,greatings
+howdy,greatings
+greetings,greatings

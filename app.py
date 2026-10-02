@@ -1,6 +1,5 @@
 import joblib
 import re
-import random
 from fastapi import FastAPI
 from fastapi.responses import FileResponse
 
@@ -14,43 +13,33 @@ from src.db_connector import (
     get_connection
 )
 
+from src.helper_fns import (
+    get_greating_welcome,
+    get_parameters
+)
+
 model = joblib.load("src/model.pkl")
 vectorizer = joblib.load("src/vectorizer.pkl")
 app =FastAPI()
 
 conversation = {
     "intent" : None,
+    "waiting_intent" : None,
     "parameters" : {}
 }
 
-def reset_conversaton():
+def reset_conversaton(value):
 
     global conversation
 
     conversation = {
         "intent" : None,
+        "waiting_intent" : value,
         "parameters" : {}
     }
-    
-def get_greating_welcome(text : str):
-    lst = [
-        "Hello! 👋 How can I help you today?",
-        "Hi there! 😊 What can I do for you?",
-        "Hey! 👋 How may I assist you?",
-        "Hello! Nice to hear from you. How can I help?",
-        "Hi! 😊 What would you like help with?",
-        "Hey there! How can I assist you today?",
-        "Good morning! ☀️ How can I help you?",
-        "Good afternoon! 😊 What can I do for you?",
-        "Good evening! 🌆 How may I assist you?",
-        "Welcome! 👋 How can I help you today?",
-        "Hi! I'm here to help. What do you need?",
-        "Hello! 😊 Feel free to ask me anything.",
-    ]
 
-    return {
-        "error" : str(random.choice(lst))
-    }
+    
+
 
 @app.get("/")
 def home():
@@ -89,42 +78,75 @@ def chatbot(text : str): #user_id: int, message: str
     
     global conversation
 
-    request = predict_intent(text)
 
     intent_handler = {
-    "account" : get_user_details,   #done
-    "delivery" : get_order_status,  #done
-    "cancellation" : cancel_order,
-    "refund" : get_refund_status,   #done
-    "order_details" : get_order_details,
+    "account" : get_user_details,   #done   @
+    "delivery" : get_order_status,  #done   @
+    "cancellation" : cancel_order,  #done   @
+    "refund" : get_refund_status,   #done   @
+    "order_details" : get_order_details, #done  @
     "update" : update_user_phone,
-    "greatings" : get_greating_welcome  # done
+    "greatings" : get_greating_welcome,  # done @
+    "parameters" : get_parameters   #done   @
 
     }
 
+    print(conversation)
+
+    request = predict_intent(text)
+
+    print(conversation)
+
     intent = request["intent"] 
+    waiting_intent = request.get("waiting_intent")
     parameters = request['parameters']
 
 
+    print("intent : ", intent)
+    print("waiting_intent : ", conversation["waiting_intent"])
+    print("parameters : ", parameters)
+
 
     if intent != conversation["intent"]:
-        reset_conversaton()
+        reset_conversaton(conversation["waiting_intent"])
         print("Reset Done.")
+        print(conversation)
+        print("--"*10)
+
     # check previous intent
     if conversation["intent"] is not None :
         # If current message contains useful parameters
         # but does not contain a meaningful new intent,
         # continue with previous intent.
 
-        if intent not in intent_handler :
+        # if intent not in intent_handler :
+        #     intent = conversation["intent"]
+
+        if intent == "parameters" :
             intent = conversation["intent"]
+            waiting_intent = conversation["waiting_intent"]
 
     conversation["intent"] = intent
+    if waiting_intent is not None :
+        conversation["waiting_intent"] = waiting_intent
 
-    # merge parametrs
+    # merge parameters
+    if intent == "parameters":
+        print(text)
+        res_parameters = intent_handler[intent](text, conversation["waiting_intent"])
+        print(res_parameters)
+        parameters = res_parameters.get("parameters")
+        intent = res_parameters.get("intent")
+        print(intent, parameters)
+        pass
     conversation["parameters"].update(parameters)
+    conversation["intent"] = intent
     parameters = conversation["parameters"]
+    intent = conversation["intent"]
 
+    print("*"*25)
+    print(conversation)
+    print("*"*25)
 
     result =intent_handler[intent](parameters)  
 
@@ -218,9 +240,14 @@ def predict_intent(text) :
     if phone_match :
         parameters["phone_number"] = str(phone_match.group(1))
 
-
+    if intent == "parameters":
+        return {
+                "intent" : intent,
+                "parameters" : parameters
+            }
     return {
         "intent" : intent,
+        "waiting_intent" : intent,
         "parameters" : parameters
     }
 

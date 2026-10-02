@@ -530,7 +530,11 @@
                     botResponse = data.map(item => [
                         item.order_id ? `Order ID: ${item.order_id}` : "",
                         item.status ? `Status: ${item.status}` : "",
-                        item.amount ? `Amount: ${item.amount}` : ""
+                        item.amount ? `Amount: ${item.amount}` : "",
+
+                        item.product_name ? `Amount: ${item.product_name}` : "",
+                        item.quantity ? `Amount: ${item.quantity}` : "",
+                        item.price ? `Amount: ${item.price}` : "",
                     ].filter(Boolean).join("<br>")).join("<br><br>");
             }
             else if (data.id || data.user_name || data.email || data.phone || data.created_at) {

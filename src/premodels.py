@@ -66,10 +66,10 @@ model.fit(x_train_tfidf,y_train)
 pred = model.predict(x_test_tfidf)
 x_pred = model.predict(x_train_tfidf)
 
-# print(classification_report(y_test, pred))
-# print(classification_report(y_train, x_pred))
+print(classification_report(y_test, pred))
+print(classification_report(y_train, x_pred))
 
-# print(confusion_matrix(y_test, pred))
+print(confusion_matrix(y_test, pred))
 
 joblib.dump(model, "model.pkl")
 joblib.dump(vectorizer, "vectorizer.pkl")

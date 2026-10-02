@@ -1,63 +1,361 @@
 text,intent
-My payment failed,payment
-My card payment was declined,payment
-I was charged but my payment failed,payment
-Money was deducted from my account,payment
-Why did my payment not go through,payment
-The transaction failed,payment
-I cannot make a payment,payment
-My card was declined during checkout,payment
-Payment is showing as failed,payment
-I was charged twice for the same order,payment
-My password is not working,account
-I forgot my password,account
-I cannot login to my account,account
-I am unable to sign in,account
-How can I reset my password,account
-I cannot access my account,account
-My login is not working,account
-I forgot my login details,account
-I need help accessing my account,account
-My account is locked,account
-Where is my order,delivery
-Where is my package,delivery
-My order has not arrived,delivery
-Can you track my order,delivery
-When will my order arrive,delivery
-My package is delayed,delivery
-I have not received my delivery,delivery
-What is the status of my shipment,delivery
-My order is still in transit,delivery
-Please give me my tracking information,delivery
-I want to return my product,refund
-How can I get a refund,refund
-I want my money back,refund
-Can I return this item,refund
-I received a damaged product and want a refund,refund
-I am not happy with my purchase and want a refund,refund
-Please refund my order,refund
-How long does a refund take,refund
-I need to return something I bought,refund
-Can I get my money back for this order,refund
-I want to cancel my subscription,cancellation
-Please cancel my subscription,cancellation
-How do I cancel my account subscription,cancellation
-I no longer want the subscription,cancellation
-Stop my monthly subscription,cancellation
-I want to end my subscription,cancellation
-Please stop charging me every month,cancellation
-Can I cancel my plan,cancellation
-I don't want to continue my subscription,cancellation
-Cancel my current plan,cancellation
-hello,greatings
-hi,greatings
-hey,greatings
-good morning,greatings
-good afternoon,greatings
-good evening,greatings
-hello there,greatings
-hi there,greatings
-hey there,greatings
-how are you,greatings
-howdy,greatings
-greetings,greatings
+"how are you",greatings
+"hello",greatings
+"hi",greatings
+"hey",greatings
+"good morning",greatings
+"good afternoon",greatings
+"good evening",greatings
+"how are you doing",greatings
+"how is it going",greatings
+"nice to meet you",greatings
+"hello there",greatings
+"hi there",greatings
+"hey there",greatings
+"good to see you",greatings
+"hope you are doing well",greatings
+"how are things",greatings
+"what's up",greatings
+"whats up",greatings
+"are you doing well",greatings
+"can you say hello",greatings
+"hello chatbot",greatings
+"hi chatbot",greatings
+"hey chatbot",greatings
+"good day",greatings
+"morning",greatings
+"afternoon",greatings
+"evening",greatings
+"how have you been",greatings
+"hope everything is fine",greatings
+"hello friend",greatings
+"hi friend",greatings
+"hey friend",greatings
+"greetings",greatings
+"thanks for being here",greatings
+"nice having you here",greatings
+"how are things going",greatings
+"can we chat",greatings
+"i want to talk",greatings
+"let's chat",greatings
+"hello and good morning",greatings
+"i am unable to sign in",account
+"i forgot my login details",account
+"i cannot log in",account
+"i can't sign in",account
+"my account is not working",account
+"i forgot my password",account
+"i lost my login information",account
+"how can i access my account",account
+"i cannot access my account",account
+"my login is not working",account
+"why can't i log into my account",account
+"i am having trouble signing in",account
+"my password is not working",account
+"i need help with my account",account
+"how do i reset my password",account
+"i cannot remember my password",account
+"i forgot my username",account
+"my account is locked",account
+"please help me access my account",account
+"i am unable to access my profile",account
+"my login credentials are lost",account
+"i cannot remember my login details",account
+"how do i recover my account",account
+"i need to recover my login",account
+"i am having account access problems",account
+"my account login failed",account
+"sign in is not working",account
+"i can't access my profile",account
+"i forgot my account password",account
+"help me with my login",account
+"i need help signing in",account
+"my account cannot be accessed",account
+"i am locked out of my account",account
+"how can i get back into my account",account
+"my credentials are not working",account
+"why is my account login failing",account
+"i cannot enter my account",account
+"please help with account recovery",account
+"i lost access to my account",account
+"my sign in details are not working",account
+"where is my order",delivery
+"where is my package",delivery
+"track my order",delivery
+"can you check my delivery",delivery
+"when will my order arrive",delivery
+"when will my package arrive",delivery
+"what is my order status",delivery
+"tell me my delivery status",delivery
+"has my order been shipped",delivery
+"has my package been dispatched",delivery
+"my order has not arrived",delivery
+"my package is late",delivery
+"why is my delivery delayed",delivery
+"when can i expect my order",delivery
+"can i track my package",delivery
+"i want to track my shipment",delivery
+"please check my order status",delivery
+"please check my delivery status",delivery
+"where is my shipment",delivery
+"what happened to my package",delivery
+"my delivery is delayed",delivery
+"my order is delayed",delivery
+"how long will delivery take",delivery
+"how long until my package arrives",delivery
+"when should my order arrive",delivery
+"can you tell me where my order is",delivery
+"i have not received my order",delivery
+"my package has not arrived yet",delivery
+"check the status of my shipment",delivery
+"can you track my shipment",delivery
+"i need my delivery information",delivery
+"show me my order status",delivery
+"give me the tracking status",delivery
+"why has my order not arrived",delivery
+"my shipment is taking too long",delivery
+"where is my delivery",delivery
+"when is my delivery coming",delivery
+"my order has not been delivered",delivery
+"can you find my package",delivery
+"i need to know when my package will arrive",delivery
+"can i cancel my plan",cancellation
+"i want to cancel my order",cancellation
+"please cancel my order",cancellation
+"i need to cancel an order",cancellation
+"can i cancel this order",cancellation
+"i want to cancel my purchase",cancellation
+"please cancel my purchase",cancellation
+"how do i cancel my order",cancellation
+"i don't want this order anymore",cancellation
+"i changed my mind and want to cancel",cancellation
+"cancel my order please",cancellation
+"can you cancel my order",cancellation
+"i need my order cancelled",cancellation
+"please stop my order",cancellation
+"is it possible to cancel my order",cancellation
+"can my order be cancelled",cancellation
+"i want to stop this order",cancellation
+"i no longer need this product",cancellation
+"i want to cancel this purchase",cancellation
+"help me cancel my order",cancellation
+"how can i cancel a purchase",cancellation
+"please stop the order from being processed",cancellation
+"i want to cancel an item",cancellation
+"can i cancel an item from my order",cancellation
+"i need to cancel my purchase",cancellation
+"cancel this order for me",cancellation
+"i don't need this order now",cancellation
+"please cancel this transaction",cancellation
+"can you stop my order",cancellation
+"i want to stop my purchase",cancellation
+"i made a wrong order and want to cancel",cancellation
+"i ordered by mistake",cancellation
+"can i cancel an order i just placed",cancellation
+"i want to cancel a recent order",cancellation
+"please help me cancel a recent order",cancellation
+"i no longer want the product",cancellation
+"how can i stop my order",cancellation
+"cancel my recent purchase",cancellation
+"i need to cancel an item i ordered",cancellation
+"please cancel the order i placed",cancellation
+"i want to return my product",refund
+"i want a refund",refund
+"can i return this item",refund
+"i received a damaged product and want a refund",refund
+"i want to return my order",refund
+"how can i get a refund",refund
+"please refund my money",refund
+"i need to return this product",refund
+"can i get my money back",refund
+"i want my money back",refund
+"how do i return an item",refund
+"how can i return my product",refund
+"i need a refund for my purchase",refund
+"please process my refund",refund
+"can i return a damaged item",refund
+"the product is damaged and i want a refund",refund
+"i received the wrong product and want a refund",refund
+"i want to send this product back",refund
+"how do i request a refund",refund
+"can i get a refund for this order",refund
+"i don't want this product and want to return it",refund
+"i need to return an item i purchased",refund
+"please help me return this item",refund
+"i want to send my order back",refund
+"can i return a product after delivery",refund
+"my product is defective and i want a refund",refund
+"i received a damaged item",refund
+"i want a refund for a damaged product",refund
+"the item i received is damaged",refund
+"i received the wrong item",refund
+"i want to return the wrong item",refund
+"can i get my payment refunded",refund
+"please give me a refund",refund
+"i need my purchase refunded",refund
+"how long does a refund take",refund
+"where is my refund",refund
+"what is the status of my refund",refund
+"check my refund status",refund
+"i have not received my refund",refund
+"when will i get my refund",refund
+"i was charged twice for the same order",payment
+"money was deducted from my account",payment
+"i was charged twice",payment
+"why was i charged twice",payment
+"my payment was deducted",payment
+"money was taken from my account",payment
+"my account was charged",payment
+"i was charged more than once",payment
+"the same payment was charged twice",payment
+"i see two charges for one order",payment
+"why did you charge me twice",payment
+"my money was deducted",payment
+"payment was taken from my account",payment
+"i was charged for the same order twice",payment
+"there are duplicate charges",payment
+"i see a duplicate payment",payment
+"my payment was processed twice",payment
+"the payment was deducted twice",payment
+"i paid twice for one order",payment
+"why did i pay twice",payment
+"my account shows two payments",payment
+"two payments were made for one order",payment
+"i was billed twice",payment
+"why am i seeing two charges",payment
+"my card was charged twice",payment
+"money was deducted twice",payment
+"the amount was deducted from my bank account",payment
+"my payment amount was deducted",payment
+"the payment has been taken",payment
+"i was charged an incorrect amount",payment
+"why was money deducted",payment
+"my bank account was charged",payment
+"my card payment was duplicated",payment
+"i made a payment but something went wrong",payment
+"my payment was charged multiple times",payment
+"there is an extra charge on my account",payment
+"i see an extra payment",payment
+"i was charged unexpectedly",payment
+"why is there an extra charge",payment
+"please check my payment",payment
+"show me my order details",order_details
+"i want my order details",order_details
+"can you show my order information",order_details
+"give me details about my order",order_details
+"what are my order details",order_details
+"show order information",order_details
+"i need information about my order",order_details
+"tell me about my order",order_details
+"show me the products in my order",order_details
+"what did i order",order_details
+"show my purchased items",order_details
+"what items are in my order",order_details
+"give me my purchase details",order_details
+"show my purchase information",order_details
+"i need details of my purchase",order_details
+"can you tell me what i purchased",order_details
+"show my order summary",order_details
+"what is included in my order",order_details
+"show the items i ordered",order_details
+"i want to see my purchased products",order_details
+"give me information about my purchase",order_details
+"can you check my order details",order_details
+"please provide my order information",order_details
+"show order details for me",order_details
+"i need to know what i ordered",order_details
+"what products did i purchase",order_details
+"show products from my order",order_details
+"tell me the details of my purchase",order_details
+"can i see my order information",order_details
+"i want to check my order",order_details
+"show my recent order details",order_details
+"give me details of my recent order",order_details
+"what did i purchase recently",order_details
+"show my latest order",order_details
+"i need my latest order information",order_details
+"can you show what i bought",order_details
+"show me my purchase details",order_details
+"what is my order information",order_details
+"provide details about my order",order_details
+"let me see my order details",order_details
+"i want to update my phone number",update
+"how can i change my phone number",update
+"i need to change my mobile number",update
+"please update my phone number",update
+"can i change my phone number",update
+"i want to update my mobile number",update
+"how do i update my phone number",update
+"my phone number has changed",update
+"i need to change my registered phone number",update
+"please change my mobile number",update
+"update my contact number",update
+"i want to change my contact number",update
+"can i update my contact number",update
+"my mobile number is different now",update
+"i have a new phone number",update
+"please update my mobile",update
+"how can i change my registered mobile",update
+"change my registered phone number",update
+"i need to update my registered mobile number",update
+"can you change my phone number",update
+"help me update my phone number",update
+"help me change my mobile number",update
+"i want to edit my phone number",update
+"can i edit my contact number",update
+"please edit my registered phone number",update
+"my registered number needs to be changed",update
+"i want to replace my old phone number",update
+"how do i replace my phone number",update
+"update my new phone number",update
+"i need to register a new mobile number",update
+"can you update my contact details",update
+"i want to modify my phone number",update
+"please modify my mobile number",update
+"my contact number has changed",update
+"i need to change the number on my account",update
+"change the phone number linked to my account",update
+"update the mobile linked to my account",update
+"i want to change my account phone number",update
+"please update my registered contact number",update
+"how can i change the phone number linked to my account",update
+"user id 1",parameters
+"user ID: 1",parameters
+"user id: 1",parameters
+"user #1",parameters
+"user # 1",parameters
+"my user id is 1",parameters
+"my user ID: 1",parameters
+"my id is 1",parameters
+"my ID: 1",parameters
+"user number 1",parameters
+"user no 1",parameters
+"user no. 1",parameters
+"userid 1",parameters
+"userid: 1",parameters
+"the user id is 1",parameters
+"the user ID is 1",parameters
+"user is 1",parameters
+"customer id 1",parameters
+"customer ID: 1",parameters
+"customer number 1",parameters
+"account id 1",parameters
+"account ID: 1",parameters
+"account number 1",parameters
+"order #1",parameters
+"order # 1",parameters
+"order 1",parameters
+"order id 1",parameters
+"order ID: 1",parameters
+"order id: 1",parameters
+"my order id is 1",parameters
+"my order ID: 1",parameters
+"my order number is 1",parameters
+"order number 1",parameters
+"order no 1",parameters
+"order no. 1",parameters
+"order #1 user id 1",parameters
+"user id 1 order id 1",parameters
+"user ID: 1, order ID: 1",parameters
+"userid 1 order 1",parameters
+"user 1 order 1",parameters
