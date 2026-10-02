@@ -92,13 +92,13 @@ def chatbot(text : str): #user_id: int, message: str
     request = predict_intent(text)
 
     intent_handler = {
-    "account" : get_user_details,
-    "delivery" : get_order_status,
+    "account" : get_user_details,   #done
+    "delivery" : get_order_status,  #done
     "cancellation" : cancel_order,
-    "refund" : get_refund_status,
+    "refund" : get_refund_status,   #done
     "order_details" : get_order_details,
     "update" : update_user_phone,
-    "greatings" : get_greating_welcome
+    "greatings" : get_greating_welcome  # done
 
     }
 
@@ -131,6 +131,9 @@ def chatbot(text : str): #user_id: int, message: str
     # if result.get("Success") != False:
     #     reset_conversaton()
     #     print("-"*20)
+
+    print(intent, conversation["intent"])
+    print(result)
 
     return result
 

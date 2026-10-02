@@ -458,7 +458,8 @@
 
                 console.log("DATA:", data);
                 console.log("TYPE:", typeof data);
-                console.log("IS ARRAY:", Array.isArray(data));
+                console.log("id : ", data.id);
+                console.log("name : ", data.name);
 
 
                 /* Remove "Typing..." */
@@ -532,14 +533,23 @@
                         item.amount ? `Amount: ${item.amount}` : ""
                     ].filter(Boolean).join("<br>")).join("<br><br>");
             }
+            else if (data.id || data.user_name || data.email || data.phone || data.created_at) {
+
+                botResponse =  [
+                    data.id ? `Order ID: ${data.id}` : "",
+                    data.user_name ? `Name : ${data.user_name}` : "",
+                    data.email ? `Email : ${data.email}` : "",
+                    data.phone ? `Phone Number : ${data.phone}` : "",
+                    data.created_at ? `Created At: ${new Date(data.created_at).toLocaleString()}` : ""
+                ].filter(Boolean).join("<br>");
+            }
 
 
             else {
 
                 botResponse = "Sorry, I couldn't understand that.";
-                console.log(Array.isArray(data));
-                console.log(data.length)
-                console.log(data[0].order_id)
+
+                
 
             }
 

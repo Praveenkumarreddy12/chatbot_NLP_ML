@@ -28,9 +28,9 @@ def get_user_details(request):
     cursor =connection.cursor(dictionary=True)
 
     query = """
-        SELECT user_id, name, email, phone, created_at
+        SELECT id, user_name, email, phone, created_at
         FROM users
-        WHERE user_id = %s
+        WHERE id = %s
     """
 
     cursor.execute(query, (user_id,))
