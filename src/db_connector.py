@@ -66,7 +66,7 @@ def update_user_phone(request):
     query = """
         UPDATE users
         SET phone = %s
-        WHERE user_id = %s
+        WHERE id = %s
     """
 
     cursor.execute(query, (phone, user_id))
@@ -75,7 +75,9 @@ def update_user_phone(request):
     cursor.close()
     connection.close()
 
-    return "Phone number updated successfully."
+    return {
+         "message" : f"Phone number {phone} updated successfully."
+    }
 
 
 def get_order_status(request):
