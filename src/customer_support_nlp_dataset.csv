@@ -359,3 +359,23 @@ text,intent
 "user ID: 1, order ID: 1",parameters
 "userid 1 order 1",parameters
 "user 1 order 1",parameters
+"user id 1 phone number 9876543210",parameters
+"user ID: 1, phone number: 9876543210",parameters
+"userid 1 phone 9876543210",parameters
+"user 1 phone 9876543210",parameters
+"user id 1 mobile number 9876543210",parameters
+"user ID 1 mobile 9876543210",parameters
+"userid: 1, mobile number: 9876543210",parameters
+"user 1 mobile 9876543210",parameters
+"user id 1 contact number 9876543210",parameters
+"user ID: 1, contact: 9876543210",parameters
+"user 1 contact number 9876543210",parameters
+"user id #1 phone #9876543210",parameters
+"user #1 phone #9876543210",parameters
+"user id 1 and phone number 9876543210",parameters
+"user 1 and mobile number 9876543210",parameters
+"user id: 1 and phone: 9876543210",parameters
+"userid 1 and mobile 9876543210",parameters
+"my user id is 1 and phone number is 9876543210",parameters
+"my user id 1 my phone number 9876543210",parameters
+"user id is 1, phone number is 9876543210",parameters
