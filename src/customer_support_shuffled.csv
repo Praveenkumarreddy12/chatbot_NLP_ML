@@ -1,381 +1,460 @@
 text,intent
-show products from my order,order_details
-can you check my order details,order_details
-what products did i purchase,order_details
-hello and good morning,greatings
-thanks for being here,greatings
-user  phone,parameters
-i cannot remember my password,account
-please provide my order information,order_details
-i want to modify my phone number,update
-can i get my money back,refund
-my payment was charged multiple times,payment
-i want to update my mobile number,update
-please stop the order from being processed,cancellation
-show my purchased items,order_details
-when is my delivery coming,delivery
-userid  order,parameters
-can you show my order information,order_details
-i forgot my username,account
-my card payment was duplicated,payment
-my order has not arrived,delivery
-how are things,greatings
-i need information about my order,order_details
-user  and mobile number,parameters
-how are you,greatings
-i lost access to my account,account
-show the items i ordered,order_details
-afternoon,greatings
-i lost my login information,account
-nice to meet you,greatings
-i cannot enter my account,account
-please update my registered contact number,update
-i want to update my phone number,update
-i cannot log in,account
-the same payment was charged twice,payment
-how long does a refund take,refund
-can you stop my order,cancellation
-my order is delayed,delivery
-cancel my recent purchase,cancellation
-check the status of my shipment,delivery
-userid  and mobile,parameters
-please cancel my purchase,cancellation
-user id,parameters
-hey chatbot,greatings
-hey friend,greatings
-why is there an extra charge,payment
-user id  contact number,parameters
-account number,parameters
+why is my account login failing,account
 hi friend,greatings
-my account is locked,account
-can i update my contact number,update
-when will my order arrive,delivery
-how do i replace my phone number,update
-my user id is,parameters
-user  mobile,parameters
-please modify my mobile number,update
-good afternoon,greatings
+i made a wrong order and want to cancel,cancellation
+phone no,parameters
+can you tell me where my order is,delivery
+i received the wrong product and want a refund,refund
+user id  order id,parameters
+tell me about my order,order_details
 please process my refund,refund
+can i see my profile details,account
+my contact number,parameters
+my mobile number is different now,update
+i want to see my profile information,account
+please update my phone number,update
+what is the status of my refund,refund
+user  mobile,parameters
+i want a refund,refund
+when will i get my refund,refund
+my mobile number is,parameters
+how are you,greatings
+can you tell me my user id,account
+i was charged for the same order twice,payment
+phone number,parameters
+hello and good morning,greatings
+please cancel the order i placed,cancellation
+show my order summary,order_details
+i want to know my user id,account
+i want to check my account details,account
+please help with account recovery,account
+nice to meet you,greatings
+can you show my email,account
+please help me return this item,refund
+registered phone,parameters
+show order information,order_details
+user no,parameters
+what did i purchase recently,order_details
+user  order,parameters
+i was charged twice for the same order,payment
+can you tell me my profile information,account
+i need my latest order information,order_details
+user id is  phone number is,parameters
+account id,parameters
+i need to know when my package will arrive,delivery
+can i get my registered information,account
+money was deducted twice,payment
+user  phone,parameters
+what are my profile details,account
+the item i received is damaged,refund
+user id  and phone,parameters
+what are my registered details,account
+my package is late,delivery
+my account is not working,account
+my phone number,parameters
+mobile,parameters
+thanks for being here,greatings
+i want to return my product,refund
+i want to check my order,order_details
+order number,parameters
+has my order been shipped,delivery
+hi there,greatings
+order no,parameters
+how are things,greatings
+can i cancel this order,cancellation
+the payment has been taken,payment
+how do i replace my phone number,update
+can you say hello,greatings
+user id,parameters
+can you tell me what i purchased,order_details
+what email is linked to my account,account
+i need to cancel my purchase,cancellation
+my order id is,parameters
+my user id,parameters
+i forgot my login details,account
+i am having account access problems,account
+account id,parameters
+afternoon,greatings
+i dont need this order now,cancellation
+i no longer want the product,cancellation
+phone,parameters
+can i see my account details,account
+i need my order cancelled,cancellation
+mobile is,parameters
+contact number is,parameters
+please modify my mobile number,update
+why did i pay twice,payment
+show me the products in my order,order_details
+hey chatbot,greatings
+show my purchased items,order_details
+can you give me my account information,account
+my password is not working,account
+user id  mobile,parameters
+check the status of my shipment,delivery
+registered mobile,parameters
+which email is registered with my account,account
+i have not received my order,delivery
+i want my order details,order_details
+morning,greatings
+whats up,greatings
+can you show my phone number,account
+can i cancel an item from my order,cancellation
+my account was charged,payment
+hey friend,greatings
+can you provide my account details,account
+order  user id,parameters
+track my order,delivery
+my order number is,parameters
+show the items i ordered,order_details
 i forgot my password,account
-what are my order details,order_details
-can you find my package,delivery
-how can i get back into my account,account
-my payment amount was deducted,payment
-i need my delivery information,delivery
-when should my order arrive,delivery
-my order id,parameters
-i am locked out of my account,account
-why did you charge me twice,payment
+i have not received my refund,refund
+i cant access my profile,account
+i forgot my account password,account
+my product is defective and i want a refund,refund
+i received the wrong item,refund
+i cannot remember my password,account
+change my registered phone number,update
+good afternoon,greatings
+how can i get my account details,account
+i need to cancel an order,cancellation
+can you check my delivery,delivery
+order id,parameters
+show me my order details,order_details
+whats up,greatings
+userid  and mobile,parameters
+which phone number is registered with my account,account
+user id  phone number,parameters
 hey,greatings
 are you doing well,greatings
-i want to change my account phone number,update
-please check my payment,payment
-update the mobile linked to my account,update
-i need to recover my login,account
-i was charged an incorrect amount,payment
-track my order,delivery
-can i track my package,delivery
-please help with account recovery,account
-my account shows two payments,payment
-change my registered phone number,update
-why has my order not arrived,delivery
-why was i charged twice,payment
-my shipment is taking too long,delivery
-money was deducted twice,payment
-order no,parameters
-can you change my phone number,update
-why is my account login failing,account
-when can i expect my order,delivery
-show order information,order_details
-whats up,greatings
-sign in is not working,account
-help me cancel my order,cancellation
-how are you doing,greatings
-the product is damaged and i want a refund,refund
-my bank account was charged,payment
-user is,parameters
-user id  contact,parameters
-can you track my shipment,delivery
-order number,parameters
-user id  phone,parameters
-i need to change my mobile number,update
-my login credentials are lost,account
-what did i order,order_details
-userid  phone,parameters
-i need to cancel an item i ordered,cancellation
-tell me about my order,order_details
-cancel this order for me,cancellation
-whats up,greatings
-i have a new phone number,update
-morning,greatings
-i no longer need this product,cancellation
-userid,parameters
-my order number is,parameters
-can you update my contact details,update
-i need to return this product,refund
-the user id is,parameters
-account id,parameters
-user id  and phone,parameters
+i was charged unexpectedly,payment
+can i know my phone number,account
+i cannot remember my login details,account
+can you show my order information,order_details
 please change my mobile number,update
-why am i seeing two charges,payment
-i received a damaged product and want a refund,refund
-can i cancel this order,cancellation
-what is my order information,order_details
-i need to know when my package will arrive,delivery
-what is the status of my refund,refund
-how can i get a refund,refund
-can you say hello,greatings
-i no longer want the product,cancellation
-my sign in details are not working,account
-i need my order cancelled,cancellation
-how can i cancel a purchase,cancellation
-i want to change my contact number,update
-can we chat,greatings
-user id  order id,parameters
-user id  order id,parameters
-i need to return an item i purchased,refund
-please help me return this item,refund
+hello friend,greatings
+check my refund status,refund
+mobile no,parameters
+evening,greatings
+how are you doing,greatings
+user id  contact,parameters
 i am unable to access my profile,account
-show me my order status,delivery
-can i cancel an order i just placed,cancellation
-good evening,greatings
-userid,parameters
-can i change my phone number,update
-hello there,greatings
-i want to send this product back,refund
-how long until my package arrives,delivery
-where is my package,delivery
-user no,parameters
-i was billed twice,payment
-please give me a refund,refund
-i see two charges for one order,payment
-i want to edit my phone number,update
-i want to cancel a recent order,cancellation
-has my package been dispatched,delivery
-i received the wrong product and want a refund,refund
-please cancel this transaction,cancellation
-my money was deducted,payment
-why is my delivery delayed,delivery
+my user id  my phone number,parameters
+phone number,parameters
 help me with my login,account
-i need to cancel an order,cancellation
-please check my order status,delivery
-can i cancel an item from my order,cancellation
+my account login failed,account
+when should my order arrive,delivery
+what happened to my package,delivery
+mobile no,parameters
+i want to change my contact number,update
+my id is,parameters
+please cancel this transaction,cancellation
+how do i cancel my order,cancellation
+tell me the details of my purchase,order_details
+user id  phone number,parameters
+why is my delivery delayed,delivery
 my phone number has changed,update
-please check my delivery status,delivery
-give me details of my recent order,order_details
-i forgot my account password,account
+order no,parameters
+user  contact number,parameters
+please help me cancel a recent order,cancellation
+my login credentials are lost,account
+order,parameters
+please check my order status,delivery
+how can i return my product,refund
+how long until my package arrives,delivery
+can you cancel my order,cancellation
+userid,parameters
+how do i check my account details,account
+i want to return the wrong item,refund
+when is my delivery coming,delivery
+user id  contact number,parameters
+registered mobile number,parameters
+can you show my registered details,account
+my id,parameters
+please cancel my purchase,cancellation
+can you check my order details,order_details
+i need help signing in,account
+can you show what i bought,order_details
+why am i seeing two charges,payment
+can i return this item,refund
+show me my purchase details,order_details
+i want to stop this order,cancellation
+user id,parameters
+i dont want this product and want to return it,refund
+please edit my registered phone number,update
+update my new phone number,update
+can we chat,greatings
+my order has not arrived,delivery
+how do i update my phone number,update
+user number,parameters
+the user id is,parameters
+i want to replace my old phone number,update
+what is my registered email address,account
+how do i recover my account,account
+user,parameters
+how do i request a refund,refund
+good evening,greatings
+i need to change my mobile number,update
+can i see my order information,order_details
+can you track my shipment,delivery
+my order is delayed,delivery
+i dont want this order anymore,cancellation
+can my order be cancelled,cancellation
+hello there,greatings
+my contact number has changed,update
+how do i reset my password,account
+tell me my account information,account
+lets chat,greatings
+why is there an extra charge,payment
+can you find my package,delivery
+mobile number,parameters
+the payment was deducted twice,payment
+i want to stop my purchase,cancellation
+my user id is,parameters
+i want my money back,refund
+can i change my phone number,update
+cancel this order for me,cancellation
+i am unable to sign in,account
+money was deducted from my account,payment
+my shipment is taking too long,delivery
+my payment was deducted,payment
+where is my shipment,delivery
+hi,greatings
+i cant sign in,account
+how can i change the phone number linked to my account,update
+what is my user id,account
+payment was taken from my account,payment
+my credentials are not working,account
+order id,parameters
+how can i access my account,account
+can i track my package,delivery
+mobile,parameters
+i want to update my phone number,update
+userid  mobile number,parameters
+i cannot access my account,account
+my card payment was duplicated,payment
+can i know my user id,account
 good day,greatings
 i want to talk,greatings
-i need to cancel my purchase,cancellation
-please cancel my order,cancellation
-i cant access my profile,account
-i need a refund for my purchase,refund
-i have not received my refund,refund
-i was charged twice,payment
-help me update my phone number,update
-i dont want this product and want to return it,refund
-i want to cancel my purchase,cancellation
-i dont need this order now,cancellation
-i paid twice for one order,payment
-what is my order status,delivery
-account id,parameters
-i need my latest order information,order_details
-user id,parameters
-i need my purchase refunded,refund
-how do i update my phone number,update
-i want to send my order back,refund
-how can i change my registered mobile,update
-can i see my order information,order_details
-where is my refund,refund
-provide details about my order,order_details
-i changed my mind and want to cancel,cancellation
-lets chat,greatings
-hi there,greatings
-can you tell me what i purchased,order_details
-my product is defective and i want a refund,refund
-user,parameters
-give me the tracking status,delivery
-can i get a refund for this order,refund
-show my purchase information,order_details
-user number,parameters
-my order has not been delivered,delivery
-my order id is,parameters
-user id  mobile,parameters
-what did i purchase recently,order_details
-user id  phone number,parameters
-i want to return my order,refund
-i made a payment but something went wrong,payment
-i want to stop this order,cancellation
-please help me cancel a recent order,cancellation
-when will i get my refund,refund
-check my refund status,refund
-user  phone,parameters
-hi,greatings
-my payment was deducted,payment
-where is my delivery,delivery
-the user id is,parameters
-why did i pay twice,payment
-evening,greatings
-can i cancel my plan,cancellation
-update my contact number,update
-my card was charged twice,payment
-i need to update my registered mobile number,update
-my user id,parameters
-how do i cancel my order,cancellation
-my credentials are not working,account
-my registered number needs to be changed,update
-hello friend,greatings
-can you check my delivery,delivery
-order  user id,parameters
-my package has not arrived yet,delivery
-show me the products in my order,order_details
-i was charged unexpectedly,payment
+i want to track my shipment,delivery
+how can i get back into my account,account
+is it possible to cancel my order,cancellation
+i want to cancel a recent order,cancellation
 please stop my order,cancellation
+what mobile number is linked to my account,account
+where is my refund,refund
+i was charged an incorrect amount,payment
+i was billed twice,payment
+show my latest order,order_details
+userid  order,parameters
+update the mobile linked to my account,update
+change the phone number linked to my account,update
+i cannot enter my account,account
+please check my delivery status,delivery
+i want to edit my phone number,update
+the amount was deducted from my bank account,payment
+can i return a damaged item,refund
+can i get a refund for this order,refund
+please tell me my registered email,account
+customer id,parameters
+how do i return an item,refund
+where is my order,delivery
+customer number,parameters
+order,parameters
+give me my purchase details,order_details
+i need to update my registered mobile number,update
+my payment was processed twice,payment
+my registered number needs to be changed,update
+order id,parameters
+show order details for me,order_details
+i need to recover my login,account
+cancel my order please,cancellation
+my bank account was charged,payment
+please provide my order information,order_details
+show my purchase information,order_details
+phone is,parameters
+contact number,parameters
 can i return a product after delivery,refund
-can you show what i bought,order_details
-my account is not working,account
-my user id  my phone number,parameters
-my account login failed,account
-how can i change my phone number,update
-when will my package arrive,delivery
-i received a damaged item,refund
-i need help signing in,account
-please cancel the order i placed,cancellation
+there is an extra charge on my account,payment
+where is my delivery,delivery
+tell me my delivery status,delivery
+can you stop my order,cancellation
+i see two charges for one order,payment
+i want to send my order back,refund
+sign in is not working,account
+my account cannot be accessed,account
+give me details of my recent order,order_details
+the product is damaged and i want a refund,refund
+user id,parameters
+the user id is,parameters
+i lost access to my account,account
+i see an extra payment,payment
+user no,parameters
+please help me access my account,account
+can i update my contact number,update
+what did i order,order_details
+when will my order arrive,delivery
+i want to update my mobile number,update
+i want to know my account details,account
+user  and mobile number,parameters
+i want to know my registered phone number,account
+my payment was charged multiple times,payment
+please show my account details,account
+i need my purchase refunded,refund
+i no longer need this product,cancellation
+i need my delivery information,delivery
 hey there,greatings
 how are things going,greatings
 hope everything is fine,greatings
-how do i return an item,refund
-i want to cancel an item,cancellation
-help me change my mobile number,update
-user id  phone number,parameters
-i made a wrong order and want to cancel,cancellation
-the payment has been taken,payment
-two payments were made for one order,payment
-can you cancel my order,cancellation
-i want to track my shipment,delivery
-order no,parameters
-i am having trouble signing in,account
-show me my order details,order_details
-please update my phone number,update
-i need to change my registered phone number,update
-how do i request a refund,refund
-i forgot my login details,account
-userid  mobile number,parameters
-my account was charged,payment
-i need details of my purchase,order_details
-i need to change the number on my account,update
-good morning,greatings
-show my order summary,order_details
-customer number,parameters
-my delivery is delayed,delivery
-the amount was deducted from my bank account,payment
-user,parameters
-i was charged for the same order twice,payment
-how can i return my product,refund
-where is my shipment,delivery
-i see a duplicate payment,payment
-i cannot remember my login details,account
-how can i access my account,account
-greetings,greatings
-tell me the details of my purchase,order_details
-i was charged twice for the same order,payment
-customer id,parameters
-how have you been,greatings
-please edit my registered phone number,update
-why was money deducted,payment
-give me information about my purchase,order_details
-can i return this item,refund
-user id,parameters
-i want to cancel this purchase,cancellation
-how do i recover my account,account
-can my order be cancelled,cancellation
-i dont want this order anymore,cancellation
-how is it going,greatings
-i am having account access problems,account
-hope you are doing well,greatings
-how can i stop my order,cancellation
-i am unable to sign in,account
-order id,parameters
-customer id,parameters
-my payment was processed twice,payment
-let me see my order details,order_details
-my id is,parameters
-i see an extra payment,payment
-i was charged more than once,payment
-payment was taken from my account,payment
-please update my mobile,update
-order,parameters
-what items are in my order,order_details
-user  contact number,parameters
-order id,parameters
-can i edit my contact number,update
-i want to check my order,order_details
-money was deducted from my account,payment
-i want a refund,refund
-i cant sign in,account
-the payment was deducted twice,payment
-i want to return the wrong item,refund
-i need to register a new mobile number,update
-i want to see my purchased products,order_details
-can you tell me where my order is,delivery
-i need help with my account,account
-hello,greatings
-my login is not working,account
-where is my order,delivery
-money was taken from my account,payment
-nice having you here,greatings
-show order details for me,order_details
-my package is late,delivery
-my password is not working,account
-i need to know what i ordered,order_details
-i want my order details,order_details
-good to see you,greatings
-change the phone number linked to my account,update
-has my order been shipped,delivery
-show my latest order,order_details
-please refund my money,refund
-my id,parameters
-user id  and phone number,parameters
-is it possible to cancel my order,cancellation
-i want to replace my old phone number,update
-user id  mobile number,parameters
-how can i change the phone number linked to my account,update
-give me details about my order,order_details
-how do i reset my password,account
-why cant i log into my account,account
-can i return a damaged item,refund
-i received the wrong item,refund
-my user id is  and phone number is,parameters
-i want a refund for a damaged product,refund
-i want my money back,refund
-please help me access my account,account
-i cannot access my account,account
-order,parameters
-there is an extra charge on my account,payment
-give me my purchase details,order_details
-hi chatbot,greatings
-my contact number has changed,update
-i want to return my product,refund
-show me my purchase details,order_details
-can i get my payment refunded,refund
-my mobile number is different now,update
-order,parameters
-what is included in my order,order_details
-update my new phone number,update
-i want to stop my purchase,cancellation
-cancel my order please,cancellation
-i ordered by mistake,cancellation
-user  order,parameters
-what happened to my package,delivery
-tell me my delivery status,delivery
-user no,parameters
-there are duplicate charges,payment
 i want to cancel my order,cancellation
-user id is  phone number is,parameters
-hello chatbot,greatings
-the item i received is damaged,refund
-my account cannot be accessed,account
-i have not received my order,delivery
+when can i expect my order,delivery
+please update my registered contact number,update
+what products did i purchase,order_details
+i need a refund for my purchase,refund
+i lost my login information,account
+can you tell me my email,account
+can i get my payment refunded,refund
+can i edit my contact number,update
+help me update my phone number,update
+i changed my mind and want to cancel,cancellation
+can i know my details,account
+i need to register a new mobile number,update
+cancel my recent purchase,cancellation
+i made a payment but something went wrong,payment
+money was taken from my account,payment
+userid,parameters
+good morning,greatings
+i was charged more than once,payment
+my mobile,parameters
+i am having trouble signing in,account
+i want to send this product back,refund
+order,parameters
+i want to return my order,refund
+please cancel my order,cancellation
+my login is not working,account
+give me details about my order,order_details
+please refund my money,refund
+can you tell me my phone number,account
+can i get my account information,account
+greetings,greatings
+i paid twice for one order,payment
+provide details about my order,order_details
+i ordered by mistake,cancellation
+userid  phone,parameters
+how have you been,greatings
+i want to modify my phone number,update
+i need to return an item i purchased,refund
+my money was deducted,payment
+please check my payment,payment
+why has my order not arrived,delivery
+account number,parameters
+has my package been dispatched,delivery
+what phone number is linked to my account,account
+what is my order status,delivery
+my sign in details are not working,account
+phone no,parameters
+how is it going,greatings
+what is my order information,order_details
+my user id is  and phone number is,parameters
+can i see my registered phone number,account
+what items are in my order,order_details
+hope you are doing well,greatings
+my package has not arrived yet,delivery
+can i get my details,account
+user id  and phone number,parameters
+my phone number is,parameters
+i need to return this product,refund
+why was money deducted,payment
+my order id,parameters
+i need to change my registered phone number,update
+i want a refund for a damaged product,refund
+i need to cancel an item i ordered,cancellation
+i received a damaged product and want a refund,refund
+i need information about my order,order_details
+user id  phone,parameters
+i was charged twice,payment
+contact no,parameters
+user  phone,parameters
+i need details of my purchase,order_details
+help me change my mobile number,update
+my account shows two payments,payment
+can i cancel an order i just placed,cancellation
+give me the tracking status,delivery
+can you show me my account details,account
+can i get my money back,refund
+please stop the order from being processed,cancellation
+give me information about my purchase,order_details
+why did you charge me twice,payment
+i forgot my username,account
+can i see my email address,account
+hello,greatings
+user id  order id,parameters
+mobile number is,parameters
+what information do you have about my account,account
+show me my account information,account
+how can i stop my order,cancellation
+nice having you here,greatings
+there are duplicate charges,payment
+i want to change my account phone number,update
+i cannot log in,account
+update my contact number,update
+my phone,parameters
+what is my email address,account
+how can i change my registered mobile,update
+i see a duplicate payment,payment
+please give me a refund,refund
+good to see you,greatings
+show products from my order,order_details
+can you give me my user information,account
+customer id,parameters
+my card was charged twice,payment
+my order has not been delivered,delivery
+let me see my order details,order_details
+registered phone number,parameters
+when will my package arrive,delivery
+what is included in my order,order_details
+phone number is,parameters
 show my recent order details,order_details
-order id,parameters
+how long does a refund take,refund
+i want to know my email address,account
+i need to change the number on my account,update
+can i know my email,account
+i want to cancel my purchase,cancellation
+how can i cancel a purchase,cancellation
+phone,parameters
+i want to cancel this purchase,cancellation
+can i cancel my plan,cancellation
+can i know my registered email,account
+what are my account details,account
+please update my mobile,update
+i received a damaged item,refund
+why was i charged twice,payment
+hi chatbot,greatings
+i need to know what i ordered,order_details
+show me my order status,delivery
+my payment amount was deducted,payment
+i want to cancel an item,cancellation
+user is,parameters
+what are my order details,order_details
+user id  mobile number,parameters
+i have a new phone number,update
+the same payment was charged twice,payment
+i want to see my purchased products,order_details
+my delivery is delayed,delivery
+where is my package,delivery
 how long will delivery take,delivery
+can you update my contact details,update
+why cant i log into my account,account
+user,parameters
+please tell me my registered phone number,account
+how can i change my phone number,update
+how can i get a refund,refund
+i am locked out of my account,account
+mobile number,parameters
+hello chatbot,greatings
+help me cancel my order,cancellation
+can i see my user id,account
+my account is locked,account
+two payments were made for one order,payment
+can you change my phone number,update
+my mobile number,parameters
+i need help with my account,account

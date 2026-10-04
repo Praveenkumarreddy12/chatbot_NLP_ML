@@ -71,6 +71,8 @@ def get_parameters(text : str, waiting_intent : str) :
     if phone_match :
         parameters["phone_number"] = str(phone_match.group(1))
 
+
+    print("get_parameters are running.................", phone_match,text)
     return {
         "intent" : waiting_intent,
         "parameters" : parameters

@@ -28,15 +28,22 @@ conversation = {
     "parameters" : {}
 }
 
-def reset_conversaton(value):
+def reset_conversaton(intent, value, para):
 
     global conversation
 
-    conversation = {
-        "intent" : None,
-        "waiting_intent" : value,
-        "parameters" : {}
-    }
+    if intent == "parameters":
+        conversation = {
+                "intent" : None,
+                "waiting_intent" : value,
+                "parameters" : para
+            }
+    else :
+        conversation = {
+            "intent" : None,
+            "waiting_intent" : value,
+            "parameters" : {}
+        }
 
     
 
@@ -85,7 +92,7 @@ def chatbot(text : str): #user_id: int, message: str
     "cancellation" : cancel_order,  #done   @
     "refund" : get_refund_status,   #done   @
     "order_details" : get_order_details, #done  @
-    "update" : update_user_phone,
+    "update" : update_user_phone,   #done   @
     "greatings" : get_greating_welcome,  # done @
     "parameters" : get_parameters   #done   @
 
@@ -94,12 +101,14 @@ def chatbot(text : str): #user_id: int, message: str
     print(conversation)
 
     request = predict_intent(text)
+    print(request)
 
     print(conversation)
 
     intent = request["intent"] 
     waiting_intent = request.get("waiting_intent")
-    parameters = request['parameters']
+ 
+    parameters = request["parameters"]
 
 
     print("intent : ", intent)
@@ -108,7 +117,7 @@ def chatbot(text : str): #user_id: int, message: str
 
 
     if intent != conversation["intent"]:
-        reset_conversaton(conversation["waiting_intent"])
+        reset_conversaton(intent, conversation["waiting_intent"], conversation["parameters"])
         print("Reset Done.")
         print(conversation)
         print("--"*10)
@@ -170,25 +179,25 @@ def predict_intent(text) :
     text_lower = text.lower()
 
     # Check whether message contains user/order ID
-    id_pattern = r"\b(?:user(?:\s*id)?|my(?:\s*user)?(?:\s*id)?)\s*#?\s*(\d+)\b"
+    # id_pattern = r"\b(?:user(?:\s*id)?|my(?:\s*user)?(?:\s*id)?)\s*#?\s*(\d+)\b"
 
-    ptr = re.search(id_pattern, text_lower)
+    # ptr = re.search(id_pattern, text_lower)
 
-    if ptr and "order" not in text_lower:
+    # if ptr and "order" not in text_lower:
         
-        conversation["parameters"] = {
-            "user_id" : ptr.group(1)
-        }
+    #     conversation["parameters"] = {
+    #         "user_id" : ptr.group(1)
+    #     }
 
-        # Don't run ML model
-        if conversation["intent"]:
-            return {
-                "intent" : conversation["intent"],
-                "parameters" : conversation["parameters"]
-            }
+    #     # Don't run ML model
+    #     if conversation["intent"]:
+    #         return {
+    #             "intent" : conversation["intent"],
+    #             "parameters" : conversation["parameters"]
+    #         }
 
-        # If there is no previous intent
-        return None
+    #     # If there is no previous intent
+    #     return None
 
     text_vectorizer = vectorizer.transform([text])
     predictions = model.predict(text_vectorizer)
@@ -245,6 +254,8 @@ def predict_intent(text) :
                 "intent" : intent,
                 "parameters" : parameters
             }
+
+    print("predict intent running.........", phone_match)
     return {
         "intent" : intent,
         "waiting_intent" : intent,

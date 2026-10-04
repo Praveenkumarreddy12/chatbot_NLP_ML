@@ -39,6 +39,55 @@ text,intent
 "i want to talk",greatings
 "let's chat",greatings
 "hello and good morning",greatings
+"can i get my details",account
+"can i know my details",account
+"can i see my account details",account
+"can you show me my account details",account
+"i want to know my account details",account
+"how can i get my account details",account
+"can you give me my account information",account
+"can i get my account information",account
+"what are my account details",account
+"what information do you have about my account",account
+"can i know my email",account
+"can you tell me my email",account
+"what is my email address",account
+"can i see my email address",account
+"i want to know my email address",account
+"can you show my email",account
+"what email is linked to my account",account
+"which email is registered with my account",account
+"can i know my registered email",account
+"what is my registered email address",account
+"can i know my phone number",account
+"can you tell me my phone number",account
+"what phone number is linked to my account",account
+"which phone number is registered with my account",account
+"can i see my registered phone number",account
+"i want to know my registered phone number",account
+"can you show my phone number",account
+"what mobile number is linked to my account",account
+"can i know my user id",account
+"what is my user id",account
+"can you tell me my user id",account
+"can i see my user id",account
+"i want to know my user id",account
+"what are my registered details",account
+"can you show my registered details",account
+"can i see my profile details",account
+"what are my profile details",account
+"can you tell me my profile information",account
+"i want to see my profile information",account
+"can i get my registered information",account
+"show me my account information",account
+"tell me my account information",account
+"i want to check my account details",account
+"how do i check my account details",account
+"can you provide my account details",account
+"please show my account details",account
+"please tell me my registered email",account
+"please tell me my registered phone number",account
+"can you give me my user information",account
 "i am unable to sign in",account
 "i forgot my login details",account
 "i cannot log in",account
@@ -379,3 +428,33 @@ text,intent
 "my user id is 1 and phone number is 9876543210",parameters
 "my user id 1 my phone number 9876543210",parameters
 "user id is 1, phone number is 9876543210",parameters
+"phone number 9514563578",parameters
+"phone 9514563578",parameters
+"mobile number 9514563578",parameters
+"mobile 9514563578",parameters
+"my phone number 9514563578",parameters
+"my phone 9514563578",parameters
+"my mobile number 9514563578",parameters
+"my mobile 9514563578",parameters
+"phone no 9514563578",parameters
+"phone no. 9514563578",parameters
+"mobile no 9514563578",parameters
+"mobile no. 9514563578",parameters
+"phone number is 9514563578",parameters
+"phone is 9514563578",parameters
+"mobile number is 9514563578",parameters
+"mobile is 9514563578",parameters
+"my phone number is 9514563578",parameters
+"my mobile number is 9514563578",parameters
+"contact number 9514563578",parameters
+"contact no 9514563578",parameters
+"contact number is 9514563578",parameters
+"my contact number 9514563578",parameters
+"registered phone number 9514563578",parameters
+"registered mobile number 9514563578",parameters
+"registered phone 9514563578",parameters
+"registered mobile 9514563578",parameters
+"phone: 9514563578",parameters
+"mobile: 9514563578",parameters
+"phone number: 9514563578",parameters
+"mobile number: 9514563578",parameters
