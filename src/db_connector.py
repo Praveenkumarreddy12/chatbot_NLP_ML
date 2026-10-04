@@ -117,11 +117,7 @@ def get_order_status(request):
 
 
     return lst_result
-# {
-#         "order_id": results[0],
-#         "status":results[0],
-#         "amount": results[0]
-#     }
+
 
 
 # -------------------------

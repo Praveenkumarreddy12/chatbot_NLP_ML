@@ -87,23 +87,20 @@ def chatbot(text : str): #user_id: int, message: str
 
 
     intent_handler = {
-    "account" : get_user_details,   #done   @
-    "delivery" : get_order_status,  #done   @
-    "cancellation" : cancel_order,  #done   @
-    "refund" : get_refund_status,   #done   @
-    "order_details" : get_order_details, #done  @
-    "update" : update_user_phone,   #done   @
-    "greatings" : get_greating_welcome,  # done @
-    "parameters" : get_parameters   #done   @
+    "account" : get_user_details,   
+    "delivery" : get_order_status,  
+    "cancellation" : cancel_order,  
+    "refund" : get_refund_status,   
+    "order_details" : get_order_details,
+    "update" : update_user_phone,   
+    "greatings" : get_greating_welcome, 
+    "parameters" : get_parameters   
 
     }
 
-    print(conversation)
 
     request = predict_intent(text)
-    print(request)
 
-    print(conversation)
 
     intent = request["intent"] 
     waiting_intent = request.get("waiting_intent")
@@ -111,16 +108,13 @@ def chatbot(text : str): #user_id: int, message: str
     parameters = request["parameters"]
 
 
-    print("intent : ", intent)
-    print("waiting_intent : ", conversation["waiting_intent"])
-    print("parameters : ", parameters)
+
 
 
     if intent != conversation["intent"]:
         reset_conversaton(intent, conversation["waiting_intent"], conversation["parameters"])
         print("Reset Done.")
-        print(conversation)
-        print("--"*10)
+
 
     # check previous intent
     if conversation["intent"] is not None :
@@ -141,30 +135,17 @@ def chatbot(text : str): #user_id: int, message: str
 
     # merge parameters
     if intent == "parameters":
-        print(text)
         res_parameters = intent_handler[intent](text, conversation["waiting_intent"])
-        print(res_parameters)
         parameters = res_parameters.get("parameters")
         intent = res_parameters.get("intent")
-        print(intent, parameters)
         pass
     conversation["parameters"].update(parameters)
     conversation["intent"] = intent
     parameters = conversation["parameters"]
     intent = conversation["intent"]
 
-    print("*"*25)
-    print(conversation)
-    print("*"*25)
 
-    result =intent_handler[intent](parameters)  
-
-    # if result.get("Success") != False:
-    #     reset_conversaton()
-    #     print("-"*20)
-
-    print(intent, conversation["intent"])
-    print(result)
+    result =intent_handler[intent](parameters) 
 
     return result
 
@@ -176,28 +157,7 @@ def frontend():
 def predict_intent(text) :
 
 
-    text_lower = text.lower()
-
-    # Check whether message contains user/order ID
-    # id_pattern = r"\b(?:user(?:\s*id)?|my(?:\s*user)?(?:\s*id)?)\s*#?\s*(\d+)\b"
-
-    # ptr = re.search(id_pattern, text_lower)
-
-    # if ptr and "order" not in text_lower:
-        
-    #     conversation["parameters"] = {
-    #         "user_id" : ptr.group(1)
-    #     }
-
-    #     # Don't run ML model
-    #     if conversation["intent"]:
-    #         return {
-    #             "intent" : conversation["intent"],
-    #             "parameters" : conversation["parameters"]
-    #         }
-
-    #     # If there is no previous intent
-    #     return None
+    text = text.lower()
 
     text_vectorizer = vectorizer.transform([text])
     predictions = model.predict(text_vectorizer)
@@ -255,7 +215,6 @@ def predict_intent(text) :
                 "parameters" : parameters
             }
 
-    print("predict intent running.........", phone_match)
     return {
         "intent" : intent,
         "waiting_intent" : intent,

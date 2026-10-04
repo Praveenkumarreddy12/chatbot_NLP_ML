@@ -30,9 +30,7 @@ def get_parameters(text : str, waiting_intent : str) :
 
     parameters = {}
 
-    print("Text : ", text)
-    print("Text : ",type(text))
-    print(waiting_intent)
+
     # Extract order ID
     order_match = re.search(
         r"\b(?:order|order\s*id|order\s*number|order\s*#)\s*(?:id\s*)?#?\s*(\d+)\b",
@@ -72,7 +70,6 @@ def get_parameters(text : str, waiting_intent : str) :
         parameters["phone_number"] = str(phone_match.group(1))
 
 
-    print("get_parameters are running.................", phone_match,text)
     return {
         "intent" : waiting_intent,
         "parameters" : parameters
