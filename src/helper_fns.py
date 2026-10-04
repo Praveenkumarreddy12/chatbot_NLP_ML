@@ -1,5 +1,11 @@
 import random
 import re
+import joblib
+
+
+
+model = joblib.load("src/model.pkl")
+vectorizer = joblib.load("src/vectorizer.pkl")
 
 def get_greating_welcome(text : str):
     lst = [
@@ -74,3 +80,73 @@ def get_parameters(text : str, waiting_intent : str) :
         "intent" : waiting_intent,
         "parameters" : parameters
     }
+
+
+
+def predict_intent(text) :
+
+
+    text = text.lower()
+
+    text_vectorizer = vectorizer.transform([text])
+    predictions = model.predict(text_vectorizer)
+
+    intent = predictions[0]
+
+    # -------------------------
+    #  Extract parameters
+    # -------------------------
+
+    parameters = {}
+
+
+    # Extract order ID
+    order_match = re.search(
+        r"\b(?:order|order\s*id|order\s*number|order\s*#)\s*(?:id\s*)?#?\s*(\d+)\b",
+        text.lower()
+    )
+
+    if order_match:
+        parameters["order_id"] = int(order_match.group(1))
+
+
+    # Extract product ID
+    product_match = re.search(
+        r"\b(?:product|product\s*id|product\s*number|product\s*#)\s*(?:id\s*)?#?\s*(\d+)\b",
+        text.lower()
+    )
+
+    if product_match:
+        parameters["product_id"] = int(product_match.group(1))
+
+
+    # Extract user ID
+    user_match = re.search(
+        r"\b(?:user(?:\s*id)?|my(?:\s*user)?(?:\s*id)?)\s*#?\s*(\d+)\b",
+        text.lower()
+    ) 
+
+    if user_match:
+        parameters["user_id"] = int(user_match.group(1))
+
+    # Extract Phone number
+    phone_match = re.search(
+        r"\b(?:phone|phone\s*number|mobile|mobile\s*number|contact|contact\s*number)\s*#?\s*(\d{10})\b",
+        text.lower()
+    )
+
+    if phone_match :
+        parameters["phone_number"] = str(phone_match.group(1))
+
+    if intent == "parameters":
+        return {
+                "intent" : intent,
+                "parameters" : parameters
+            }
+
+    return {
+        "intent" : intent,
+        "waiting_intent" : intent,
+        "parameters" : parameters
+    }
+
