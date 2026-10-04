@@ -532,9 +532,9 @@
                         item.status ? `Status: ${item.status}` : "",
                         item.amount ? `Amount: ${item.amount}` : "",
 
-                        item.product_name ? `Amount: ${item.product_name}` : "",
-                        item.quantity ? `Amount: ${item.quantity}` : "",
-                        item.price ? `Amount: ${item.price}` : "",
+                        item.product_name ? `Product Name: ${item.product_name}` : "",
+                        item.quantity ? `Quantity: ${item.quantity}` : "",
+                        item.price ? `price: ${item.price}` : "",
                     ].filter(Boolean).join("<br>")).join("<br><br>");
             }
             else if (data.id || data.user_name || data.email || data.phone || data.created_at) {
