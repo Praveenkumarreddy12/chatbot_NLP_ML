@@ -207,3 +207,22 @@ Chatbot Response
 ```
 
 This project can be further extended with more intents, better NLP models, real e-commerce APIs, authentication, larger datasets, and more advanced conversational capabilities.
+
+Setup
+1. Create virtual environment
+python -m venv venv
+2. Activate environment
+Windows PowerShell:
+
+venv\Scripts\activate
+Mac/Linux:
+
+source venv/bin/activate
+3. Install requirements
+pip install -r requirements.txt
+4. Add Groq API key
+Create a .env file:
+
+GROQ_API_KEY=your_groq_api_key_here
+5. Run app
+streamlit run app.py
